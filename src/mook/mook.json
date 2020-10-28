@@ -1,0 +1,172 @@
+{
+  "typePayment": {
+    "today": [483, 870],
+    "week": [4483, 5870],
+    "month": [9999, 13870]
+  },
+  "typeOrder": {
+    "today": [1000, 3000],
+    "week": [2500, 4000],
+    "month": [4500, 5600]
+  },
+  "orderHour": {
+    "today": {
+      "Subscribe": "120,102",
+      "labels": ["08 às 11h", "11 às 14h", "14 às 18h", "18 às 23h", "23 às 8h"],
+      "gained": [1500, 25000, 12000, 15000, 20000],
+      "percent": 15
+    },
+    "week": {
+      "Subscribe": 985.872,
+      "labels": ["08 às 11h", "11 às 14h", "14 às 18h", "18 às 23h", "23 às 8h"],
+      "gained": [950, 55000, 19000, 55000, 90000],
+      "percent": 75
+    }
+  },
+  "OrderWeekDay": [
+    {
+        "day": "sunday",
+        "orderCount": 366
+    },
+    {
+        "day": "monday",
+        "orderCount": 277
+    },
+    {
+        "day": "tuesday",
+        "orderCount": 293
+    },
+    {
+        "day": "wednesday",
+        "orderCount": 323
+    },
+    {
+        "day": "thursday",
+        "orderCount": 629
+    },
+    {
+        "day": "friday",
+        "orderCount": 782
+    },
+    {
+        "day": "saturday",
+        "orderCount": 803
+    }
+],
+  "gmv": {
+      "labels": ["17/10", "18/10", "19/10", "20/10", "21/10"],
+      "value": [12, 44, 53, 42, 66]
+    },
+  "orders": {
+    "labels": ["17/10", "18/10", "19/10", "20/10", "21/10"],
+    "value": [30, 10, 25, 25, 50]
+  },
+  "ticketAverage": {
+      "Marketplace": {
+        "value": "R$47,94",
+        "percent": 15
+      },
+      "Empresarial": {
+        "value": "R$26,94",
+        "percent": 19
+      }
+  },
+  "ordersAverageDay": {
+    "Marketplace": {
+      "value": "R$107,94",
+      "percent": 15
+    },
+    "Empresarial": {
+      "value": "R$126,94",
+      "percent": 19
+    }
+  },
+  "productsMoreSale": {
+      "fifteen": [
+        {
+          "key": "2",
+          "name": "Facebook",
+          "qnt": 12,
+          "total": 121.10
+        },
+        {
+          "key": "3",
+          "name": "Facebook2",
+          "qnt": 15,
+          "total": 80.10
+        }
+      ],
+      "thirty": [
+        {
+          "key": "2",
+          "name": "Instagram",
+          "qnt": 8,
+          "total": 560.10
+        },
+        {
+          "key": "3",
+          "name": "Facebook",
+          "qnt": 30,
+          "total": 450.10
+        }
+      ],
+      "forty-five": [
+        {
+          "key": "2",
+          "name": "Linkedin",
+          "qnt": 25,
+          "total": 150.10
+        },
+        {
+          "key": "3",
+          "name": "Instagram",
+          "qnt": 50,
+          "total": 160.10
+        }
+      ]
+    },
+    "supplierMoreSale": {
+      "fifteen": [
+        {
+          "key": "2",
+          "name": "Facebook",
+          "qnt": 12,
+          "total": 121.10
+        },
+        {
+          "key": "3",
+          "name": "Facebook2",
+          "qnt": 15,
+          "total": 80.10
+        }
+      ],
+      "thirty": [
+        {
+          "key": "2",
+          "name": "Instagram",
+          "qnt": 8,
+          "total": 560.10
+        },
+        {
+          "key": "3",
+          "name": "Facebook",
+          "qnt": 30,
+          "total": 450.10
+        }
+      ],
+      "forty-five": [
+        {
+          "key": "2",
+          "name": "Linkedin",
+          "qnt": 25,
+          "total": 150.10
+        },
+        {
+          "key": "3",
+          "name": "Instagram",
+          "qnt": 50,
+          "total": 160.10
+        }
+      ]
+    }
+}
