@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Spin } from 'antd';
 import { ChartjsLineChart } from '../../charts/chartjs';
@@ -6,6 +6,7 @@ import { Cards } from '../../cards/frame/cards-frame';
 import { gmvRequest } from '../../../../../store/modules/chart/actions';
 
 function GraphLine() {
+  const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
   const { gmvLoading, gmvState } = useSelector(state => {
     return {
@@ -21,9 +22,15 @@ function GraphLine() {
     }
   }, [dispatch]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
+  }, []);
+
   return (
     <div className="account-card">
-      {gmvLoading ? (
+      {loading ? (
         <div className="sd-spin">
           <Spin />
         </div>
@@ -122,7 +129,7 @@ function GraphLine() {
                         beginAtZero: true,
                         fontSize: 13,
                         fontColor: '#182b49',
-                        max: 100,
+                        max: 15000,
                         stepSize: 50,
                         padding: 10,
                         callback(label) {
