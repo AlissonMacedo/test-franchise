@@ -46,7 +46,7 @@ const GraphLong = () => {
       ...state,
       tab: value,
     });
-    dispatch(orderWeekFilter(value));
+    // dispatch(orderWeekFilter(value));
   };
 
   return (
@@ -58,14 +58,10 @@ const GraphLong = () => {
               <div className="card-nav">
                 <ul>
                   <li className={state.tab === 'today' ? 'active' : 'deactivate'}>
-                    <Link onClick={() => handleActiveTab('today')} to="#">
-                      Hoje
-                    </Link>
+                    <a onClick={() => handleActiveTab('today')}>Hoje</a>
                   </li>
                   <li className={state.tab === 'week' ? 'active' : 'deactivate'}>
-                    <Link onClick={() => handleActiveTab('week')} to="#">
-                      Semana
-                    </Link>
+                    <a onClick={() => handleActiveTab('week')}>Semana</a>
                   </li>
                 </ul>
               </div>

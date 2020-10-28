@@ -34,7 +34,7 @@ const TypePayment = () => {
       ...state,
       date: value,
     });
-    dispatch(typeOrderRequest());
+    // dispatch(typeOrderRequest());
 
     console.log('teste');
   };

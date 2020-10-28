@@ -1,7 +1,6 @@
-import React, { lazy, Suspense, useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { Row, Col, Skeleton } from 'antd';
-import { useDispatch, useSelector } from 'react-redux';
-import moment from 'moment';
+import { useDispatch } from 'react-redux';
 import { Cards } from './components/cards/frame/cards-frame';
 import { Main } from './components/styled';
 import GraphLongWeek from './components/GraphLongWeek';
@@ -28,15 +27,8 @@ function Alfred() {
     }
   }, []);
 
-  const dateNow = moment().format('yyyy-MM-DD');
-  const dateNowOneLess = moment()
-    .subtract(30, 'd')
-    .format('yyyy-MM-DD');
-
   return (
     <>
-      {dateNow}
-      {dateNowOneLess}
       <Main style={{ paddingTop: 50, paddingLeft: 160, paddingRight: 160 }}>
         <Row justify="center" gutter={25}>
           <Col xxl={8} xl={8} md={8} xs={24}>

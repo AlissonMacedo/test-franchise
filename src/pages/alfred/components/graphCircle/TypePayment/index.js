@@ -33,7 +33,7 @@ const TypePayment = () => {
       ...state,
       date: value,
     });
-    dispatch(typePaymentFilter(value));
+    // dispatch(typePaymentFilter(value));
   };
 
   const percentage = data => {
@@ -51,19 +51,13 @@ const TypePayment = () => {
             <div className="card-nav">
               <ul>
                 <li className={state.date === 'today' ? 'active' : 'deactivate'}>
-                  <Link onClick={() => handleActiveTypePayment('today')} to="#">
-                    Hoje
-                  </Link>
+                  <a onClick={() => handleActiveTypePayment('today')}>Hoje</a>
                 </li>
                 <li className={state.date === 'week' ? 'active' : 'deactivate'}>
-                  <Link onClick={() => handleActiveTypePayment('week')} to="#">
-                    Semana
-                  </Link>
+                  <a onClick={() => handleActiveTypePayment('week')}>Semana</a>
                 </li>
                 <li className={state.date === 'month' ? 'active' : 'deactivate'}>
-                  <Link onClick={() => handleActiveTypePayment('month')} to="#">
-                    Mês
-                  </Link>
+                  <a onClick={() => handleActiveTypePayment('month')}>Mês</a>
                 </li>
               </ul>
             </div>

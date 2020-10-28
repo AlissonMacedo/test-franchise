@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'antd';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import Scrollbar from 'perfect-scrollbar-react';
+
 import { CardGroup } from './style';
 import { Cards } from '../../cards/frame/cards-frame';
 import { supplierMoreSaleRequest, supplierMoreSaleFilter } from '../../../../../store/modules/chart/actions';
@@ -44,12 +44,12 @@ const SocialTrafficMetrics = () => {
       key: 'supplierName ',
     },
     {
-      dataIndex: 'lastMonth',
-      key: 'lastMonth',
-    },
-    {
       dataIndex: 'thisMonth',
       key: 'thisMonth',
+    },
+    {
+      dataIndex: 'percent',
+      key: 'percent',
     },
   ];
 
@@ -63,8 +63,8 @@ const SocialTrafficMetrics = () => {
           {
             key: '01',
             supplierName: <span className="traffic-title">Produto Fornecedor</span>,
-            lastMonth: <span className="traffic-title">Quantidade</span>,
-            thisMonth: <span className="traffic-title">Valor Total</span>,
+            lastMonth: <span className="traffic-title">Mês Atual</span>,
+            percent: <span className="traffic-title">%</span>,
           },
           ...socialTrafficState,
         ]
@@ -82,30 +82,30 @@ const SocialTrafficMetrics = () => {
     <CardGroup>
       <div className="full-width-table">
         <Cards
-          isbutton={
-            <div className="card-nav">
-              <ul>
-                <li className={state.date === 'fifteen' ? 'active' : 'deactivate'}>
-                  <Link onClick={() => handleActiveTypePayment('fifteen')} to="#">
-                    15 dias
-                  </Link>
-                </li>
-                <li className={state.date === 'thirty' ? 'active' : 'deactivate'}>
-                  <Link onClick={() => handleActiveTypePayment('thirty')} to="#">
-                    30 dias
-                  </Link>
-                </li>
-                <li className={state.date === 'forty-five' ? 'active' : 'deactivate'}>
-                  <Link onClick={() => handleActiveTypePayment('forty-five')} to="#">
-                    45 dias
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          }
+          // isbutton={
+          //   <div className="card-nav">
+          //     <ul>
+          //       <li className={state.date === 'fifteen' ? 'active' : 'deactivate'}>
+          //         <Link onClick={() => handleActiveTypePayment('fifteen')} to="#">
+          //           15 dias
+          //         </Link>
+          //       </li>
+          //       <li className={state.date === 'thirty' ? 'active' : 'deactivate'}>
+          //         <Link onClick={() => handleActiveTypePayment('thirty')} to="#">
+          //           30 dias
+          //         </Link>
+          //       </li>
+          //       <li className={state.date === 'forty-five' ? 'active' : 'deactivate'}>
+          //         <Link onClick={() => handleActiveTypePayment('forty-five')} to="#">
+          //           45 dias
+          //         </Link>
+          //       </li>
+          //     </ul>
+          //   </div>
+          // }
           title="Fornecedores Com Mais Vendas"
           size="large"
-          more={moreContent}
+          // more={moreContent}
         >
           <div className="traffic-table table-responsive">
             <Table columns={trafficTableColumns} dataSource={trafficTableData} pagination={false} />

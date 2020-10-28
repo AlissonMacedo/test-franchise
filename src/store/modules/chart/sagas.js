@@ -26,9 +26,7 @@ import api from '../../../services/api';
 import {
   ticketAverage,
   typePayment,
-  typeOrder,
   orderHour,
-  orderHour2,
   gmv,
   orders,
   ordersAverageDay,
@@ -259,10 +257,23 @@ export function* productMoreSaleFilterData({ payload }) {
 
 export function* supplierMoreSaleGetData() {
   try {
-    const response = yield call(api.get, `top-suppliers?qnt=10`);
+    const response = yield call(api.get, `top-suppliers?qnt=6`);
+    const data = response.data.body;
 
-    const { fifteen } = supplierMoreSale;
-    yield put(supplierMoreSaleSuccess(response.data.body));
+    const percentage = (data1, data2) => {
+      const sub = data2 - data1;
+      const percent = sub / data2;
+
+      return `${percent.toFixed(2)}%`;
+    };
+    const teste = data.map(state => ({
+      supplierName: state.supplierName,
+      thisMonth: `R$ ${state.thisMonth.toLocaleString('pt-BR')}`,
+      lastMonth: state.lastMonth,
+      percent: percentage(state.thisMonth, state.lastMonth),
+    }));
+    // const { fifteen } = supplierMoreSale;
+    yield put(supplierMoreSaleSuccess(teste));
   } catch (err) {
     yield put(supplierMoreSaleFailure(err));
   }
